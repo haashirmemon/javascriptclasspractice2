@@ -91,9 +91,13 @@ function applyColor(color) {
 
   var div1= document.getElementById("div1");
   div1.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
-
 }
+var num = Math.floor(Math.random()*6)
+function matchnumber(val){
+  document.write(num)
+document.write(num)
 
-
- applyColor(color) 
-
+if (num=val) {
+  alert("you are won")
+}
+}
