@@ -80,24 +80,44 @@
 //   }
 //   changecolor(color)
 // Apply the color to the div
-function applyColor(color) {
-  // event.preventDefault(); // Prevent form submission
-  var red = parseInt(document.getElementById("red").value);
-  var green = parseInt(document.getElementById("green").value);
-  var blue = parseInt(document.getElementById("blue").value);
+// function applyColor(color) {
+//   // event.preventDefault(); // Prevent form submission
+//   var red = parseInt(document.getElementById("red").value);
+//   var green = parseInt(document.getElementById("green").value);
+//   var blue = parseInt(document.getElementById("blue").value);
 
 
 
 
-  var div1= document.getElementById("div1");
-  div1.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
-}
-var num = Math.floor(Math.random()*6)
-function matchnumber(val){
-  document.write(num)
-document.write(num)
+//   var div1= document.getElementById("div1");
+//   div1.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
+// }
+// var num = Math.floor(Math.random()*6)
+// function matchnumber(val){
+//   document.write(num)
+// document.write(num)
 
-if (num=val) {
-  alert("you are won")
-}
-}
+// if (num=val) {
+//   alert("you are won")
+// }
+// }
+// var head = document.getElementById('divchild1')
+// var tail = document.getElementById('divchild2')
+
+// function toss(){
+// var toss = Math.floor(Math.random()*7)
+// // document.write(toss)
+// if (toss <=3) {
+//    alert('head') 
+// // document.write(toss)
+//    head.style.backgroundColor ="yellow"
+// } else if(toss >=4) {
+//     // document.write(toss)
+// alert('tail')
+//     tail.style.backgroundColor="brown"
+// }else{
+//     alert('tie')
+// //    divparent.style.backgroundColor ="green"
+// // document.write(toss)
+// } 
+// }
