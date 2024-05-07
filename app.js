@@ -121,3 +121,23 @@
 // // document.write(toss)
 // } 
 // }
+// var now = new Date()
+
+// console.log("miliseconds=>",now.getTime());
+
+// var birthdate= new Date(document.getElementById('birthdate'))
+
+// var difference =(now.getTime - birthdate.valueOf.getTime())
+
+// console.log(difference);
+// function calculatetimefrombirth() {
+//     console.log(birthdate.value);
+//     var userbirthdate = new Date(birthdate.value)
+//     var currentdate = new Date()
+//     console.log(userbirthdate);}
+
+function greetuser() {
+    var userName = prompt("enter user name ")
+
+    document.write("hello" + `${userName}` )
+}
