@@ -136,8 +136,19 @@
 //     var currentdate = new Date()
 //     console.log(userbirthdate);}
 
-function greetuser() {
-    var userName = prompt("enter user name ")
+// function greetuser() {
+//     var userName = prompt("enter user name ")
 
-    document.write("hello" + `${userName}` )
+//     document.write("hello" + `<h1> this is name</h1>${userName}` )
+// }
+ var myinfo={
+    name:"haashir",
+    fathername:"shakeelahmed",
+    class:11,
+    buissnuiss:"mobile phone shop",
 }
+myinfo.buissnuiss="qasai hun mai"
+myinfo.student="developer ban rahahun"
+delete myinfo.buissnuiss
+console.log(myinfo);
+
