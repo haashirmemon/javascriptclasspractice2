@@ -141,14 +141,56 @@
 
 //     document.write("hello" + `<h1> this is name</h1>${userName}` )
 // }
- var myinfo={
+//  var myinfo={
+//     name:"haashir",
+//     fathername:"shakeelahmed",
+//     class:11,
+//     buissnuiss:"mobile phone shop",
+// }
+// myinfo.buissnuiss="qasai hun mai"
+// myinfo.student="developer ban rahahun"
+// delete myinfo.buissnuiss
+// console.log(myinfo);
+
+// function Bakraeid(animal1,animal2,animal3,animal4) {
+//     console.log(this);
+//     this.animal1 =animal1
+//     this.animal2 =animal2
+//     this.animal3 =animal3
+//     this.animal4 =animal4
+// }
+
+var student = {
     name:"haashir",
     fathername:"shakeelahmed",
-    class:11,
-    buissnuiss:"mobile phone shop",
+    cnic:"4230168588793",
+    class:"1st year",
+    skills:"frontend developer",
+    childrens:0,
+   
+    
 }
-myinfo.buissnuiss="qasai hun mai"
-myinfo.student="developer ban rahahun"
-delete myinfo.buissnuiss
-console.log(myinfo);
+student.status = "buhot acha aadmi hai"
+delete student.status
+student.dob = new Date("02-05-2006")
+student.calculateage=function () {
+
+    console.log(this.dob);
+    var now = new Date().getFullYear()
+    var userdobyear = new Date(this.dob).getFullYear();
+
+    var userage = now - userdobyear
+    return userage
+}
+
+    console.log("student=>",student);
+console.log("calculateage=>",student.calculateage());
+
+document.getElementById("name").innerHTML = student.name
+document.getElementById("fatherName").innerHTML = student.fathername
+document.getElementById("cnic").innerHTML = student.cnic
+document.getElementById("class").innerHTML = student.class
+document.getElementById("skills").innerHTML = student.skills
+document.getElementById("children").innerHTML = student.childrens
+document.getElementById("age").innerHTML = student.calculateage()
 
