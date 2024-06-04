@@ -166,9 +166,7 @@ var student = {
     cnic:"4230168588793",
     class:"1st year",
     skills:"frontend developer",
-    childrens:0,
-   
-    
+    childrens:0
 }
 student.status = "buhot acha aadmi hai"
 delete student.status
@@ -194,3 +192,34 @@ document.getElementById("skills").innerHTML = student.skills
 document.getElementById("children").innerHTML = student.childrens
 document.getElementById("age").innerHTML = student.calculateage()
 
+var a = "haashir"
+var b = a
+a = "haashir shakeel ahmed"
+console.log("a=>",a);
+console.log("b=>",b);
+
+
+var haashir = 420
+var shakeel = 10
+haashir = shakeel
+console.log(haashir);
+console.log(shakeel);
+
+var hello = 'hello world';
+console.log(hello.toUpperCase())
+console.log(hello);
+hello[0] ='H'
+
+var arr= [ 'haashir', "shakeel",'ahmed','suleman']
+arr[0]='ghar walay'
+arr.push("haashir")
+// arr.shift("shakeel")
+var arr1 = arr
+var arr2 =['1','2','3','4']
+
+
+
+
+console.log(arr1);
+console.log(arr2);
+console.log(arr);
