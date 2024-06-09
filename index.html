@@ -50,7 +50,7 @@ tail
 <button id="btn" >submit
 </button> -->
 
-<table>
+<!-- <table>
     <tr>
         <th>Name:</th>
         <td id="name"></td>
@@ -80,8 +80,24 @@ tail
         <td id="age"></td>
     </tr>
 </table>
+ -->
 
+ <div id="logincontainer">
+<h1>login form</h1>
+<input type="email" placeholder="add email" id="email">
+<input type="password" placeholder="add password" id="password">
+<button onclick="loginuser()">login</button>
+ </div>
+ <div id="homecontainer">
+    <h1>welcome  <span id="useremail"></span></h1>
+    <button onclick="logout()">logout</button>
+<input type="text"  placeholder="add todo" id="inputtodo">
+<button onclick=" addtodo()">add todo</button>
 
+<ul id="list">
+
+</ul>
+ </div>
 
 
 <script src="app.js"></script>

@@ -160,66 +160,140 @@
 //     this.animal4 =animal4
 // }
 
-var student = {
-    name:"haashir",
-    fathername:"shakeelahmed",
-    cnic:"4230168588793",
-    class:"1st year",
-    skills:"frontend developer",
-    childrens:0
+// var student = {
+//     name:"haashir",
+//     fathername:"shakeelahmed",
+//     cnic:"4230168588793",
+//     class:"1st year",
+//     skills:"frontend developer",
+//     childrens:0
+// }
+// student.status = "buhot acha aadmi hai"
+// delete student.status
+// student.dob = new Date("02-05-2006")
+// student.calculateage=function () {
+
+//     console.log(this.dob);
+//     var now = new Date().getFullYear()
+//     var userdobyear = new Date(this.dob).getFullYear();
+
+//     var userage = now - userdobyear
+//     return userage
+// }
+
+//     console.log("student=>",student);
+// console.log("calculateage=>",student.calculateage());
+
+// document.getElementById("name").innerHTML = student.name
+// document.getElementById("fatherName").innerHTML = student.fathername
+// document.getElementById("cnic").innerHTML = student.cnic
+// document.getElementById("class").innerHTML = student.class
+// document.getElementById("skills").innerHTML = student.skills
+// document.getElementById("children").innerHTML = student.childrens
+// document.getElementById("age").innerHTML = student.calculateage()
+
+// var a = "haashir"
+// var b = a
+// a = "haashir shakeel ahmed"
+// console.log("a=>",a);
+// console.log("b=>",b);
+
+
+// var haashir = 420
+// var shakeel = 10
+// haashir = shakeel
+// console.log(haashir);
+// console.log(shakeel);
+
+// var hello = 'hello world';
+// console.log(hello.toUpperCase())
+// console.log(hello);
+// hello[0] ='H'
+
+// var arr= [ 'haashir', "shakeel",'ahmed','suleman']
+// arr[0]='ghar walay'
+// arr.push("haashir")
+// // arr.shift("shakeel")
+// var arr1 = arr
+// var arr2 =['1','2','3','4']
+
+
+
+
+// console.log(arr1);
+// console.log(arr2);
+// console.log(arr);
+
+var logincontainer = document.getElementById("logincontainer")
+var email = document.getElementById("email")
+var password = document.getElementById("password")
+var homecontainer = document.getElementById("homecontainer")
+var useremail = document.getElementById("useremail");
+ var inputtodo = document.getElementById("inputtodo")
+
+
+function checkinuser() {
+    var email = localStorage.getItem("email")
+if (email) {
+    logincontainer.style.display = "none"
+    homecontainer.style.display = "block"
+    useremail.innerHTML = email
+} else {
+    logincontainer.style.display = "block"
+    homecontainer.style.display = "none"
 }
-student.status = "buhot acha aadmi hai"
-delete student.status
-student.dob = new Date("02-05-2006")
-student.calculateage=function () {
 
-    console.log(this.dob);
-    var now = new Date().getFullYear()
-    var userdobyear = new Date(this.dob).getFullYear();
-
-    var userage = now - userdobyear
-    return userage
+}
+checkinuser()
+function loginuser() {
+    if(!email.value || !password.value) return alert("please add info")
+        localStorage.setItem("email",email.value)
+        localStorage.setItem("password",password.value)
+        checkinuser()  
+        email.value= ""
+        password.value= ""
 }
 
-    console.log("student=>",student);
-console.log("calculateage=>",student.calculateage());
+function logout() {
+    localStorage.removeItem("email")
+    checkinuser()
+}
 
-document.getElementById("name").innerHTML = student.name
-document.getElementById("fatherName").innerHTML = student.fathername
-document.getElementById("cnic").innerHTML = student.cnic
-document.getElementById("class").innerHTML = student.class
-document.getElementById("skills").innerHTML = student.skills
-document.getElementById("children").innerHTML = student.childrens
-document.getElementById("age").innerHTML = student.calculateage()
+function addtodo() {
+    if(!inputtodo.value?.trim()) return alert("please add todo")
+var email = localStorage.getItem("email")
 
-var a = "haashir"
-var b = a
-a = "haashir shakeel ahmed"
-console.log("a=>",a);
-console.log("b=>",b);
+    var obj = {
+        email: email,
+        todo: inputtodo.value.trim()
+    }
+    var todos = localStorage.getItem("todos")
+    // console.log(todos);
+    if (todos) {
+        todos = JSON.parse(todos)
+        todos.push(obj)
+        localStorage.setItem("todos", JSON.stringify(todos))
+    } else {
+        todos = [obj]
+        localStorage.setItem("todos",JSON.stringify(todos))
+    }
+    showtodos()
+}
 
+function showtodos() {
+    var todos = localStorage.getItem("todos")
+    var list = document.getElementById("list")
+    var email= localStorage.getItem("email")
 
-var haashir = 420
-var shakeel = 10
-haashir = shakeel
-console.log(haashir);
-console.log(shakeel);
-
-var hello = 'hello world';
-console.log(hello.toUpperCase())
-console.log(hello);
-hello[0] ='H'
-
-var arr= [ 'haashir', "shakeel",'ahmed','suleman']
-arr[0]='ghar walay'
-arr.push("haashir")
-// arr.shift("shakeel")
-var arr1 = arr
-var arr2 =['1','2','3','4']
-
-
-
-
-console.log(arr1);
-console.log(arr2);
-console.log(arr);
+    if (todos) {
+        todos = JSON.parse(todos)
+        list.innerHTML =""
+        todos.forEach(function  (data ,index) {
+            if (data.email === email) {
+                var li = `<li>${data.todo}</li>`
+                list.innerHTML += li
+            }
+        });
+    }
+}
+showtodos()
